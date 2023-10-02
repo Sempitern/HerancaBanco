@@ -18,28 +18,27 @@ public class Main {
                 System.out.println("Informacoes:");
 
                 //TODO: Imprimir as informações da conta usando o objeto criado no TODO acima.
-                System.out.println(novoUsuario);
+                novoUsuario.RetornoFormatado();
     }
 }
 
-        class ContaBancaria {
-            int numero;
-            String titular;
-            double saldo;
+class ContaBancaria {
+    int numero;
+    String titular;
+    double saldo;
 
-            DecimalFormat df;
+    DecimalFormat df;
 
 
-            public ContaBancaria(int numeroConta, String nomeTitular, double saldo, DecimalFormat df) {
+    public ContaBancaria(int numeroConta, String nomeTitular, double saldo, DecimalFormat df) {
                 this.numero = numeroConta;
                 this.titular = nomeTitular;
                 this.saldo = saldo;
                 this.df = df;
-            }
+    }
 
-            @Override
-            public String toString() {
-                return "Conta: " + numero + "\nTitular: " + titular + "\nSaldo: $" + df.format(saldo);
-            }
-        }
+    public void RetornoFormatado() {
+        System.out.printf("Conta: %d\nTitular: %s\nSaldo: R$%s%n", numero, titular, df.format(saldo));
+    }
+}
 
